@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "GmailJS Node Boilerplate Extension",
+    "name": "Linky Linkerson For Gmail",
     "short_name": "gmailjsnode",
     "version": "1.1",
-    "author": "Jostein Kjønigsen <jostein@kjonigsen.net>",
+    "author": "Ajoy Thomas",
 
-    "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
+    "description": "hyperlinks text when you paste a link within gmail without having to use the link button",
 
     "content_scripts": [
         {
@@ -16,6 +16,11 @@
             "run_at": "document_start"
         }
     ],
+    "permissions": [
+        "clipboardRead",
+        "clipboardWrite",
+        "tabs"
+      ],
 
     "web_accessible_resources": [{
         "resources": [
@@ -27,6 +32,6 @@
         "matches": ["<all_urls>"]
     }],
     "host_permissions": [
-        "https://*/*"
+        "*://mail.google.com/*"
     ]
 }
